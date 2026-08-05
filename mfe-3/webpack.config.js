@@ -6,7 +6,6 @@ const mfeConfig = withModuleFederationPlugin({
   name: "mfe3",
   exposes: {
     "./Bootstrap": "./src/app/mfe-bootstrap.ts",
-    "./Service": "./src/app/test.service.ts",
   },
   shared: {},
 });
