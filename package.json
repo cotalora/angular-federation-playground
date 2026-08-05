@@ -1,0 +1,8 @@
+{
+  "name": "angular-federation-playground",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node scripts/start-all.js"
+  }
+}
