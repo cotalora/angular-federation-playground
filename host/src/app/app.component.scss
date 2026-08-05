@@ -1,0 +1,265 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #0a0a1a;
+  color: #e0e0e0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 68px;
+  background: rgba(15, 15, 35, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #dd0031, #c3002f);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(221, 0, 49, 0.35);
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+}
+
+.ng-version-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.7rem 0.25rem 0.35rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #dd0031 0%, #c3002f 100%);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(221, 0, 49, 0.4);
+  font-size: 0.8rem;
+}
+
+.ng-shield {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.7rem;
+}
+
+.ng-version-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.ng-version-label {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
+.ng-version-number {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+nav {
+  display: flex;
+  gap: 0.4rem;
+}
+
+nav a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+nav a.active {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--mfe-color, #667eea);
+  box-shadow: 0 0 20px
+    color-mix(in srgb, var(--mfe-color, #667eea) 15%, transparent);
+}
+
+.nav-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+nav a:hover .nav-label,
+nav a.active .nav-label {
+  color: #fff;
+}
+
+.nav-version {
+  font-size: 0.6rem;
+  color: #666;
+  letter-spacing: 0.3px;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: all 0.2s;
+}
+
+nav a.active .nav-version {
+  color: var(--mfe-color, #667eea);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 0.75rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
+  }
+
+  .ng-version-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.25rem;
+  }
+
+  .ng-shield {
+    width: 18px;
+    height: 18px;
+    font-size: 0.6rem;
+  }
+
+  .ng-version-label {
+    font-size: 0.5rem;
+  }
+
+  .ng-version-number {
+    font-size: 0.7rem;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  nav a {
+    padding: 0.3rem 0.8rem;
+  }
+
+  .nav-label {
+    font-size: 0.75rem;
+  }
+
+  .nav-version {
+    font-size: 0.55rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.5rem 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .logo-text {
+    font-size: 0.85rem;
+  }
+
+  .ng-version-badge {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem 0.15rem 0.2rem;
+    gap: 0.3rem;
+  }
+
+  .ng-shield {
+    width: 16px;
+    height: 16px;
+    font-size: 0.5rem;
+  }
+
+  nav {
+    gap: 0.2rem;
+  }
+
+  nav a {
+    padding: 0.25rem 0.6rem;
+  }
+
+  .nav-label {
+    font-size: 0.7rem;
+  }
+
+  .nav-version {
+    display: none;
+  }
+
+  main {
+    padding: 0.75rem;
+  }
+}
