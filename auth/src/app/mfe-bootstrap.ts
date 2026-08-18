@@ -1,7 +1,7 @@
-import { ApplicationRef, ComponentRef, createComponent } from "@angular/core";
+import { ApplicationRef, ComponentRef } from "@angular/core";
 import { createApplication } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
 import { appConfig } from "./app.config";
+import { AppComponent } from "./app.component";
 
 let appRef: ApplicationRef | null = null;
 let componentRef: ComponentRef<AppComponent> | null = null;
@@ -13,12 +13,7 @@ export async function mount(hostElement: HTMLElement) {
 
   appRef = await createApplication({ providers: appConfig.providers });
 
-  componentRef = createComponent(AppComponent, {
-    environmentInjector: appRef.injector,
-    hostElement,
-  });
-
-  appRef.attachView(componentRef.hostView);
+  componentRef = appRef.bootstrap(AppComponent, hostElement);
 }
 
 export function destroy() {
