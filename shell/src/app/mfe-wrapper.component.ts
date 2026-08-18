@@ -10,10 +10,7 @@ import { Router } from "@angular/router";
 import { loadRemoteModule } from "@angular-architects/module-federation";
 import { NgIf } from "@angular/common";
 
-interface MfeModule {
-  mount: (el: HTMLElement) => Promise<void>;
-  destroy: () => void;
-}
+import type { MfeBootstrapModule } from "@playground/platform-contracts";
 
 const remoteMap: Record<string, string> = {
   auth: "auth",
@@ -45,7 +42,7 @@ export class MfeWrapperComponent implements OnInit, OnDestroy {
 
   private static PATH_SLASH_REGEX = /^\//;
 
-  private module: MfeModule | null = null;
+  private module: MfeBootstrapModule | null = null;
 
   protected loading = true;
 
@@ -58,8 +55,8 @@ export class MfeWrapperComponent implements OnInit, OnDestroy {
 
     this.module = (await loadRemoteModule(
       remoteName,
-      "./Bootstrap"
-    )) as MfeModule;
+      "./Bootstrap",
+    )) as MfeBootstrapModule;
 
     await this.module?.mount(this.container.nativeElement);
 

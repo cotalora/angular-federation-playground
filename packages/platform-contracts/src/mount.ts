@@ -1,10 +1,4 @@
-import type { AuthCapability } from "./auth";
-
-export interface HomeDependencies {
-  auth: AuthCapability;
-}
-
-export interface MfeBootstrapModule<TDependencies = unknown> {
-  mount(hostElement: HTMLElement, dependencies: TDependencies): Promise<void>;
+export interface MfeBootstrapModule {
+  mount(hostElement: HTMLElement): Promise<void>;
   destroy(): void;
 }
