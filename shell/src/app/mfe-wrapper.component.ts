@@ -34,7 +34,6 @@ const remoteMap: Record<string, string> = {
     `
       :host {
         display: block;
-        padding: 1rem;
       }
     `,
   ],
