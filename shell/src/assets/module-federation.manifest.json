@@ -1,0 +1,6 @@
+{
+  "auth": "http://localhost:4201/remoteEntry.js",
+  "home": "http://localhost:4202/remoteEntry.js",
+  "notification": "http://localhost:4203/remoteEntry.js",
+  "preferences": "http://localhost:4204/remoteEntry.js"
+}

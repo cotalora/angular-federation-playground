@@ -1,7 +1,7 @@
 const { spawn } = require("child_process");
 const path = require("path");
 
-const apps = ["host", "mfe-1", "mfe-2", "mfe-3", "mfe-4"];
+const apps = ["shell", "auth", "home", "notification", "preferences"];
 const root = path.resolve(__dirname, "..");
 
 apps.forEach((app) => {
