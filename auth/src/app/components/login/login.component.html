@@ -1,0 +1,41 @@
+<main class="login-page">
+  <section class="login-card">
+    <div class="brand" aria-hidden="true">A</div>
+    <p class="eyebrow">Bienvenido</p>
+    <h1>Inicia sesión</h1>
+    <p class="subtitle">Ingresa tus datos para continuar a la aplicación.</p>
+
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+      <label for="email">Correo electrónico</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        placeholder="nombre@empresa.com"
+        [(ngModel)]="email"
+        required
+      />
+
+      <label for="password">Contraseña</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        autocomplete="current-password"
+        placeholder="••••••••"
+        [(ngModel)]="password"
+        required
+      />
+
+      <button
+        type="submit"
+        [disabled]="
+          loginForm.invalid || !email.trim() || !password.trim()
+        "
+      >
+        Ingresar
+      </button>
+    </form>
+  </section>
+</main>
